@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- first way of setter injection using tags -->
+	<bean class="com.springCore.Student" name="s1">
+		<property name="Studentid">
+			<value>123</value>
+		</property>
+		<property name="Studentname">
+			<value>sushant</value>
+		</property>
+		<property name="Studentaddress">
+			<value>mumbai</value>
+		</property>
+	</bean>
+	<!-- second way of setter injection using attributes and self closing tags -->
+	<bean class="com.springCore.Student" name="s2">
+		<property name="Studentid" value="234"/>
+		<property name="Studentname" value="sahil" />
+		<property name="Studentaddress" value="delhi" />
+	</bean>
+		<bean class="com.springCore.Student" name="s3" p:studentid="456" p:studentname="arvind" p:studentaddress="mumbai "/>
+</beans>

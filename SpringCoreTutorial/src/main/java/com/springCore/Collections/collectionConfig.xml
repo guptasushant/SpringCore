@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- setter injections using collections -->
+	<bean class="com.springCore.Collections.Emp" name="emp">
+		<property name="empname" value="radhe" />
+		<property name="phones">
+			<list>
+				<value>7894561230</value>
+				<value>8529637410</value>
+				<value>9517538523</value>
+			</list>
+		</property>
+		<property name="addresses">
+		<set>
+		<value>mumbai</value>
+		<value>banaras</value>
+		<value>delhi</value>
+		</set>
+		</property>
+		<property name="courses">
+		<map>
+		<entry key="java" value="2months"/>
+		<entry key="python" value="3months"/>
+		<entry key="C++" value="1months"/>
+		</map>
+		</property>
+	</bean>
+</beans>

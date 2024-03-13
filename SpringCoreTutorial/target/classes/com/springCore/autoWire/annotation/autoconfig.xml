@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+                           <context:annotation-config />
+<!-- first way of setter injection using tags -->
+	<bean class="com.springCore.autoWire.annotation.Address" name="address">
+		<property name="street"  value="42th avenue " />
+		<property name="city"  value="new york " />		
+	</bean>
+	
+	<bean class="com.springCore.autoWire.annotation.Address" name="address2">
+		<property name="street"  value="45th avenue " />
+		<property name="city"  value="california" />		
+	</bean>
+	
+		<bean class="com.springCore.autoWire.annotation.Emp" name="emp" >
+		
+				<!-- autowired using constructor injection  -->
+		
+		<!-- <constructor-arg name="id" value="101" />
+		<constructor-arg name="name" value="sushant" />
+		<constructor-arg name="salary" value="120000" />
+		<constructor-arg ref="address" /> -->
+		
+		<!-- autowired using bean property -->
+		<property name="id" value="101" />
+		<property name="name" value="sushant" />
+		<property name="salary" value="112345" />
+		<property  name="address" ref="address" />
+		</bean>
+		<bean class="com.springCore.autoWire.annotation.Emp" name="emp2" >
+		<!-- autowired using constructor injection  -->
+		<!-- <constructor-arg value="102" />
+		<constructor-arg value="sahil" />
+		<constructor-arg value="150000" />
+		<constructor-arg ref="address2" /> -->
+		<!-- autowired using bean property -->
+		<property name="id" value="102" />
+		<property name="name" value="sahil" />
+		<property name="salary" value="123908" />
+		<property name="address" ref="address2" />
+		</bean>
+</beans>
